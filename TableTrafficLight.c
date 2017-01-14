@@ -87,9 +87,9 @@ int main(void){
 	EnableInterrupts();
 	
   while(1){
-									//masking here to make everything friendly
+												//masking here to make everything friendly
 		GPIO_PORTA_DATA_R = (GPIO_PORTA_DATA_R & 0x03) | FSM[cstate].LightOut; 		//output
-		GPIO_PORTF_DATA_R = (GPIO_PORTF_DATA_R & 0xF5) | FSM[cstate].WalkOut;			//output
+		GPIO_PORTF_DATA_R = (GPIO_PORTF_DATA_R & 0xF5) | FSM[cstate].WalkOut;		//output
 		SysTick_Wait10ms(FSM[cstate].wait);																				//wait		
 		input = GPIO_PORTE_DATA_R;																								//input
 		cstate = FSM[cstate].next[input];																					//go to next state
@@ -102,15 +102,15 @@ void Init(){
 	
   SysTick_Wait10ms(1);		
 	
-	GPIO_PORTA_DIR_R |= 0xFC;		//PA 2-7 outputs
+	GPIO_PORTA_DIR_R |= 0xFC;								//PA 2-7 outputs
 	GPIO_PORTA_AFSEL_R &= 0x03;	
 	GPIO_PORTA_DEN_R |= 0xFC;
 	
-	GPIO_PORTE_DIR_R &= 0xF8; // PE 0-2 inputs
+	GPIO_PORTE_DIR_R &= 0xF8; 								// PE 0-2 inputs
 	GPIO_PORTE_AFSEL_R &= 0xF8;	
 	GPIO_PORTE_DEN_R |= 0x07;
 	
-	GPIO_PORTF_DIR_R |= 0x0A;		//PF 1,3 outputs
+	GPIO_PORTF_DIR_R |= 0x0A;								//PF 1,3 outputs
 	GPIO_PORTF_AFSEL_R &= 0xF5;	
 	GPIO_PORTF_DEN_R |= 0x0A; 	
 }
