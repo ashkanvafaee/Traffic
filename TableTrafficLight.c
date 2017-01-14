@@ -1,13 +1,10 @@
 // ***** 0. Documentation Section *****
 // TableTrafficLight.c for (Lab 10 edX), Lab 5 EE319K
 // Runs on LM4F120/TM4C123
-// Program written by: put your names here
 // Date Created: 1/24/2015 
 // Last Modified: 3/2/2016 
-// Section 1-2pm     TA: Wooseok Lee
 // Lab number: 5
 // Hardware connections
-// TO STUDENTS "REMOVE THIS LINE AND SPECIFY YOUR HARDWARE********
 // east/west red light connected to PA4
 // east/west yellow light connected to PA3
 // east/west green light connected to PA2
